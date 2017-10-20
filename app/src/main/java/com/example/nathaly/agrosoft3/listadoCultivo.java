@@ -1,10 +1,9 @@
 package com.example.nathaly.agrosoft3;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,7 +22,7 @@ public class listadoCultivo extends AppCompatActivity {
 
        CargarListado();
 
-        Toast.makeText(this,"nathally chupa pene", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Listado de Cultivos", Toast.LENGTH_SHORT).show();
 
 
 
@@ -33,9 +32,6 @@ public class listadoCultivo extends AppCompatActivity {
         listado = ListarCultivos();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listado);
         listcultivos.setAdapter(adapter);
-
-       /* Toast.makeText(this,"nathally chupa pene", Toast.LENGTH_SHORT).show();*/
-
 
     }
 
