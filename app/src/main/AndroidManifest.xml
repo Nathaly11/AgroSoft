@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".listadoCultivo" />
         <activity android:name=".cultivos" />
-        <activity android:name=".Asociados"></activity>
+        <activity android:name=".Asociados" />
     </application>
 
 </manifest>

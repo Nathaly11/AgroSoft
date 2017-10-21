@@ -3,8 +3,10 @@ package com.example.nathaly.agrosoft3;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +19,7 @@ public class cultivos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cultivos);
+
         txtcultivo = (EditText) findViewById(R.id.txtcultivo);
 
         btnguardar = (Button) findViewById(R.id.btnguardar);
@@ -36,6 +39,8 @@ public class cultivos extends AppCompatActivity {
             }
         });
     }
+
+
     private void guardar(String Cultivo) {
         BaseHelper helper = new BaseHelper(this);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -49,6 +54,23 @@ public class cultivos extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(this,"Error:"+ e.getMessage(),Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.commonmenus,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onCreateOptionsItemSelected(MenuItem item){
+        int id= item.getItemId();
+        if (id == R.id.cultinav) {
+
+            startActivity(new Intent(this, cultivos.class));
+            // lo ideal aquí sería hacer un intent para abrir una nueva clase como lo siguiente
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 

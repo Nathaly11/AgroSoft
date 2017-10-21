@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/app_bar_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/cultinav"
+        android:icon="@drawable/cult"
+        android:title="Cultivos"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/notielotes"
+        android:title="@string/noticias" />
+    <item
+        android:icon="@drawable/cult"
+        android:title="Fertilizantes"
+        app:showAsAction="never" />
+    <item
+        android:icon="@drawable/culti1"
+        android:title="@string/r_nutricionales" />
+    <item
+        android:icon="@drawable/agrosoft"
+        android:title="@string/qui_nes_somos"
+        app:showAsAction="always" />
+    <item
+        android:icon="@drawable/asociados"
+        android:title="@string/comunidad"
+        app:showAsAction="never" />
+    <item
+        android:icon="?attr/actionModeShareDrawable"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
+</menu>
