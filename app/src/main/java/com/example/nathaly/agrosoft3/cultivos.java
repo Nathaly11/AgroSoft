@@ -40,9 +40,9 @@ public class cultivos extends AppCompatActivity {
         });
     }
 
-
+    String tabla="CREATE TABLE cultivos(id integer primary key autoincrement, cultivo text not null);";
     private void guardar(String Cultivo) {
-        BaseHelper helper = new BaseHelper(this);
+        BaseHelper helper = new BaseHelper(this,tabla);
         SQLiteDatabase db = helper.getWritableDatabase();
         try{
             ContentValues c = new  ContentValues();

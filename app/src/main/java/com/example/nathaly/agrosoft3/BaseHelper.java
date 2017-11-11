@@ -1,6 +1,8 @@
 package com.example.nathaly.agrosoft3;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -9,11 +11,17 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class BaseHelper extends SQLiteOpenHelper  {
-    String tabla="CREATE TABLE cultivos(id integer primary key autoincrement, cultivo text not null);";
+
+    String tabla;
+    public BaseHelper(Context context, String tab) {
+        super(context, "BDCultivos",null,1 );
+        tabla=tab;
+    }
 
     public BaseHelper(Context context) {
         super(context, "BDCultivos",null,1 );
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -26,5 +34,18 @@ public class BaseHelper extends SQLiteOpenHelper  {
         db.execSQL(tabla);
     }
 
+
+    public Cursor consulta(String user, String pass) throws  SQLException {
+
+
+
+        Cursor curs = this.getReadableDatabase().query("users", new String[]{"_ID","nombre","password"}
+                , "nombre like'" + user + "' and contrasenia like '" + pass + "'", null, null, null, null);
+
+        return curs;
+
+
+    }
 }
+
 

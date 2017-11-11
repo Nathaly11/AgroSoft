@@ -35,9 +35,11 @@ public class listadoCultivo extends AppCompatActivity {
 
     }
 
+    String tabla="CREATE TABLE cultivos(id integer primary key autoincrement, cultivo text not null);";
+
     private ArrayList<String> ListarCultivos(){
         ArrayList<String> datos = new ArrayList<String>();
-        BaseHelper helper = new BaseHelper(this);
+        BaseHelper helper = new BaseHelper(this, tabla);
         SQLiteDatabase db = helper.getReadableDatabase();
         String sql = "select * from cultivos";
         Cursor c = db.rawQuery(sql,null);
